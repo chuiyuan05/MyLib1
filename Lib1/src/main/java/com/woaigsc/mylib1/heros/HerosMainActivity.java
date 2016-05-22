@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.woaigsc.mylib.R;
+import com.woaigsc.mylib1.R;
 import com.woaigsc.mylib1.heros.listview.ChatListViewActivity;
 import com.woaigsc.mylib1.heros.listview.FlexibleActivity;
 import com.woaigsc.mylib1.heros.listview.FocusListViewActivity;

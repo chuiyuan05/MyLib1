@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.woaigsc.mylib.R;
+import com.woaigsc.mylib1.R;
 import com.woaigsc.mylib1.designpattern.mvp.fragment.adpater.MyAdapter;
 import com.woaigsc.mylib1.designpattern.mvp.fragment.event.FragmentGetDataEvent;
 import com.woaigsc.mylib1.designpattern.mvp.fragment.presenter.FragmentPresenterImpl;

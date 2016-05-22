@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 
-import com.woaigsc.mylib.R;
+import com.woaigsc.mylib1.R;
 import com.woaigsc.mylib1.designpattern.mvp.fragment.presenter.ActivityPresenterImpl;
 import com.woaigsc.mylib1.designpattern.mvp.fragment.presenter.IActivityPresenter;
 import com.woaigsc.mylib.widget.CustomViewPager;
