@@ -1,5 +1,7 @@
 package com.woaigsc.mylib1.heros.scroll;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.AttributeSet;
@@ -7,6 +9,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationSet;
+import android.view.animation.TranslateAnimation;
 
 import com.orhanobut.logger.Logger;
 
@@ -52,10 +56,23 @@ public class DragView1 extends View {
                 /*offsetLeftAndRight(50);
                 offsetTopAndBottom(100);*/
 
-                ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams)getLayoutParams();
+                /*ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams)getLayoutParams();
                 lp.leftMargin = getLeft()+50;
                 lp.topMargin = getTop()+100;
-                setLayoutParams(lp);
+                setLayoutParams(lp);*/
+
+                /*((View)getParent()).scrollBy(-50,-100);*/
+                /*AnimatorSet set = new AnimatorSet();
+                set.playTogether(
+                        ObjectAnimator.ofFloat(this, "translationX", 50),
+                        ObjectAnimator.ofFloat(this,"translationY", 100)
+
+                );
+                set.start();*/
+
+                TranslateAnimation anim = new TranslateAnimation(0,50,0,100);
+                anim.setFillAfter(true);
+                startAnimation(anim);
 
                 Log.d(TAG, "After");
                 Log.d(TAG,"getX "+event.getX()+ "getY "+event.getY());
