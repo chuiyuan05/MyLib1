@@ -24,6 +24,7 @@ public class DragView1 extends View {
     public DragView1(Context context, AttributeSet attrs,
                      int defStyleValue){
         super(context, attrs, defStyleValue);
+        initView();
     }
 
     private void initView(){
@@ -34,6 +35,20 @@ public class DragView1 extends View {
     public boolean onTouchEvent(MotionEvent event){
         int x = (int)event.getX() ;
         int y = (int)event.getY() ;
+        switch (event.getAction()){
+            case  MotionEvent.ACTION_DOWN:
+                lastX = x ;
+                lastY = y ;
+                break;
+            case MotionEvent.ACTION_MOVE:
+                int offsetX = x - lastX ;
+                int offsetY = y - lastY ;
+                layout(getLeft()+offsetX,
+                        getTop()+ offsetY,
+                        getRight()+ offsetX,
+                        getBottom()+ offsetY);
+                break;
+        }
         return true ;
     }
 }

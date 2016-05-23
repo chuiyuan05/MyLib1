@@ -5,7 +5,40 @@
     <application
         android:allowBackup="true"
         android:supportsRtl="true">
+        <activity android:name="com.woaigsc.mylib1.heros.HerosMainActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.woaigsc.mylib1.heros.listview.NotifyTest"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.woaigsc.mylib1.heros.listview.ScrollHideListView"
+            android:screenOrientation="portrait"></activity>
 
+        <activity
+            android:name="com.woaigsc.mylib1.heros.listview.ChatListViewActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="com.woaigsc.mylib1.heros.listview.FocusListViewActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.woaigsc.mylib1.heros.listview.FlexibleActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name="com.woaigsc.mylib1.designpattern.mvp.login.LoginActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name="com.woaigsc.mylib1.designpattern.mvp.outeradapter.AdapterActivityA"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name="com.woaigsc.mylib1.designpattern.mvp.evenbus.EventBusActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".heros.scroll.ScrollTestActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".heros.scroll.DragViewGroupTestActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".heros.scroll.DragViewTestActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

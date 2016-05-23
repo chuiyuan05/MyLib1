@@ -12,12 +12,14 @@ import com.woaigsc.mylib1.heros.listview.FlexibleActivity;
 import com.woaigsc.mylib1.heros.listview.FocusListViewActivity;
 import com.woaigsc.mylib1.heros.listview.NotifyTest;
 import com.woaigsc.mylib1.heros.listview.ScrollHideListView;
+import com.woaigsc.mylib1.heros.scroll.ScrollTestActivity;
 
 /**
  * Created by chuiyuan on 16-5-15.
  */
 public class HerosMainActivity  extends AppCompatActivity{
     private static String TAG ="HerosMainActivity" ;
+
     @Override
     protected void onCreate(Bundle savedInstanceSate){
         super.onCreate(savedInstanceSate);
@@ -43,5 +45,9 @@ public class HerosMainActivity  extends AppCompatActivity{
     public void btnFlexibleActivity(View view){
         startActivity(new Intent(this, FlexibleActivity.class));
     }
-    //this is second in dev
+    public void btnScrollActivity(View view){
+        startActivity(new Intent(this, ScrollTestActivity.class));
+    }
+
+
 }
