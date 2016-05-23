@@ -3,13 +3,17 @@ package com.woaigsc.mylib1.heros.scroll;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.orhanobut.logger.Logger;
 
 /**
  * Created by chuiyuan on 16-5-17.
  */
 public class DragView1 extends View {
+    private String TAG = this.getClass().getSimpleName() ;
     private int lastX ;
     private int lastY ;
 
@@ -43,12 +47,24 @@ public class DragView1 extends View {
             case MotionEvent.ACTION_MOVE:
                 int offsetX = x - lastX ;
                 int offsetY = y - lastY ;
-                layout(getLeft()+offsetX,
+                /*layout(getLeft()+offsetX,
                         getTop()+ offsetY,
                         getRight()+ offsetX,
-                        getBottom()+ offsetY);
+                        getBottom()+ offsetY);*/
+                offsetLeftAndRight(offsetX);
+                offsetTopAndBottom(offsetY);
                 break;
         }
         return true ;
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        if(event.getAction() == MotionEvent.ACTION_DOWN){
+            Logger.d("getX:"+event.getX()+",getY:"+event.getY());
+            Logger.d("getRawX:"+event.getRawX()+",getRawY:"+event.getRawY());
+        }
+
+        return super.dispatchTouchEvent(event);
     }
 }
