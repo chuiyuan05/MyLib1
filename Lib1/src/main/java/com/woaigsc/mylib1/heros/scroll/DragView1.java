@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.orhanobut.logger.Logger;
 
@@ -37,34 +38,33 @@ public class DragView1 extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event){
-        int x = (int)event.getX() ;
-        int y = (int)event.getY() ;
         switch (event.getAction()){
-            case  MotionEvent.ACTION_DOWN:
-                lastX = x ;
-                lastY = y ;
-                break;
-            case MotionEvent.ACTION_MOVE:
-                int offsetX = x - lastX ;
-                int offsetY = y - lastY ;
-                /*layout(getLeft()+offsetX,
-                        getTop()+ offsetY,
-                        getRight()+ offsetX,
-                        getBottom()+ offsetY);*/
-                offsetLeftAndRight(offsetX);
-                offsetTopAndBottom(offsetY);
+            case MotionEvent.ACTION_DOWN:
+                Log.d(TAG,"Before");
+                Log.d(TAG,"getX "+event.getX()+ "getY "+event.getY());
+                Log.d(TAG,"getRawX "+event.getRawX()+" getRawY "+event.getRawY());
+                Log.d(TAG,"getLeft "+getLeft()+" getTop "+getTop());
+                /*layout(getLeft()+50,
+                        getTop()+100,
+                        getRight()+50,
+                        getBottom()+100);*/
+
+                /*offsetLeftAndRight(50);
+                offsetTopAndBottom(100);*/
+
+                ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams)getLayoutParams();
+                lp.leftMargin = getLeft()+50;
+                lp.topMargin = getTop()+100;
+                setLayoutParams(lp);
+
+                Log.d(TAG, "After");
+                Log.d(TAG,"getX "+event.getX()+ "getY "+event.getY());
+                Log.d(TAG,"getRawX "+event.getRawX()+" getRawY "+event.getRawY());
+                Log.d(TAG,"getLeft "+getLeft()+" getTop "+getTop());
+
                 break;
         }
         return true ;
     }
 
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent event) {
-        if(event.getAction() == MotionEvent.ACTION_DOWN){
-            Logger.d("getX:"+event.getX()+",getY:"+event.getY());
-            Logger.d("getRawX:"+event.getRawX()+",getRawY:"+event.getRawY());
-        }
-
-        return super.dispatchTouchEvent(event);
-    }
 }
