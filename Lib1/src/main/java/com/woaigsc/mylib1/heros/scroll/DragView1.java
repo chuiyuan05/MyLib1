@@ -74,6 +74,7 @@ public class DragView1 extends View {
                 anim.setFillAfter(true);
                 startAnimation(anim);
 
+
                 Log.d(TAG, "After");
                 Log.d(TAG,"getX "+event.getX()+ "getY "+event.getY());
                 Log.d(TAG,"getRawX "+event.getRawX()+" getRawY "+event.getRawY());
