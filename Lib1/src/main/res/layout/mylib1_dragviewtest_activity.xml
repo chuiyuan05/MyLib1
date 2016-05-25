@@ -4,9 +4,14 @@
     android:layout_width="match_parent"
     android:gravity="center"
     android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This is test"/>
 
-    <com.woaigsc.mylib1.heros.scroll.DragView2
+    <com.woaigsc.mylib1.heros.scroll.DragView3
         android:layout_width="100dip"
         android:layout_height="100dip" />
+
 
 </LinearLayout>

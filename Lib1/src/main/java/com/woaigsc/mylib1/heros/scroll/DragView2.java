@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.orhanobut.logger.Logger;
 
@@ -45,10 +46,19 @@ public class DragView2 extends View{
                 Logger.d("Action move");
                 int offsetX = x - lastX;
                 int offsetY = y - lastY;
-                layout(getLeft()+offsetX,
+                /*layout(getLeft()+offsetX,
                         getTop()+ offsetY,
                         getRight() + offsetX,
-                        getBottom()+ offsetY);
+                        getBottom()+ offsetY);*/
+
+                offsetLeftAndRight(offsetX);
+                offsetTopAndBottom(offsetY);
+
+                /*ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams)
+                        getLayoutParams();
+                lp.leftMargin = getLeft()+offsetX;
+                lp.topMargin = getTop()+ offsetY;
+                setLayoutParams(lp);*/
                 break;
             case MotionEvent.ACTION_UP:
                 Logger.d("Action up");

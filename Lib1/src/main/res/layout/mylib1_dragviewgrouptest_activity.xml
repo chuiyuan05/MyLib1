@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="50dip"
+    android:paddingRight="50dip"
+    android:paddingTop="50dip"
+    android:paddingBottom="50dip">
 
+   <com.woaigsc.mylib1.heros.scroll.DragViewGroup
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+      <FrameLayout
+          android:id="@+id/mylib1_frame_menu"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@android:color/holo_blue_light">
+         <Button
+             android:text="Menu"
+             android:id="@+id/mylib1_menu"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" />
+      </FrameLayout>
+
+      <FrameLayout
+          android:id="@+id/mylib1_frame_main"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@android:color/holo_orange_dark">
+         <Button
+             android:text="Main"
+             android:id="@+id/mylib1_main"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" />
+      </FrameLayout>
+   </com.woaigsc.mylib1.heros.scroll.DragViewGroup>
 </LinearLayout>
